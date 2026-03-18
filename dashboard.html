@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Vivekananda Polytechnic</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <div class="logo-container">
+                    <i class="fas fa-graduation-cap logo-icon"></i>
+                    <span class="logo-text">Vivekananda Polytechnic</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">
+                            <i class="fas fa-home me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty.html">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Faculty
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notes.html">
+                            <i class="fas fa-book me-1"></i>Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatbot.html">
+                            <i class="fas fa-robot me-1"></i>AI Chatbot
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i>Profile
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="profileLink">
+                                <i class="fas fa-user me-2"></i>My Profile
+                            </a></li>
+                            <li><a class="dropdown-item" href="#" id="settingsLink">
+                                <i class="fas fa-cog me-2"></i>Settings
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="index.html" id="logoutLink">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Welcome Back!</h1>
+            <p class="page-subtitle" id="userGreeting">Ready to continue your learning journey?</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Quick Stats -->
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <i class="fas fa-book-open stat-icon"></i>
+                        <h3 id="coursesCount">0</h3>
+                        <p class="text-muted">Active Courses</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <i class="fas fa-download stat-icon"></i>
+                        <h3 id="notesCount">0</h3>
+                        <p class="text-muted">Notes Downloaded</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check stat-icon"></i>
+                        <h3 id="attendanceCount">0</h3>
+                        <p class="text-muted">Attendance %</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <i class="fas fa-trophy stat-icon"></i>
+                        <h3 id="achievementsCount">0</h3>
+                        <p class="text-muted">Achievements</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="row">
+                <!-- Recent Activities -->
+                <div class="col-lg-8 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-history me-2"></i>Recent Activities
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list" id="activityList">
+                                <!-- Activities will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-bolt me-2"></i>Quick Actions
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <a href="notes.html" class="btn btn-primary">
+                                    <i class="fas fa-download me-2"></i>Download Notes
+                                </a>
+                                <a href="chatbot.html" class="btn btn-outline-primary">
+                                    <i class="fas fa-robot me-2"></i>Ask AI Assistant
+                                </a>
+                                <a href="#" class="btn btn-outline-primary" id="scheduleBtn">
+                                    <i class="fas fa-calendar me-2"></i>View Schedule
+                                </a>
+                                <a href="#" class="btn btn-outline-primary" id="assignmentsBtn">
+                                    <i class="fas fa-tasks me-2"></i>Assignments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Courses -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-graduation-cap me-2"></i>Current Courses
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="coursesGrid">
+                                <!-- Courses will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-calendar-alt me-2"></i>Upcoming Events
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="event-list" id="eventList">
+                                <!-- Events will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-bell me-2"></i>Notifications
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="notification-list" id="notificationList">
+                                <!-- Notifications will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Vivekananda Polytechnic</h5>
+                    <p>Empowering students with quality technical education and fostering innovation for a brighter future.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="notes.html">Study Materials</a></li>
+                        <li><a href="chatbot.html">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="text-center">
+                <p>&copy; 2024 Vivekananda Polytechnic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    
+    <!-- Dashboard JS -->
+    <script>
+        // Dashboard specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDashboard();
+        });
+
+        function initializeDashboard() {
+            // Get user data from sessionStorage (set during login)
+            const userType = sessionStorage.getItem('userType') || 'student';
+            const userName = sessionStorage.getItem('userName') || 'User';
+            
+            const userData = {
+                name: userName,
+                type: userType,
+                id: userType === 'student' ? 'STU001' : 'FAC001'
+            };
+
+            // Update greeting
+            updateGreeting(userData);
+            
+            // Load dashboard data based on user type
+            loadDashboardData(userData);
+            
+            // Set up event listeners
+            setupDashboardEvents();
+            
+            // Check if user is logged in
+            if (!userType) {
+                // Redirect to registration page if not logged in (login removed)
+                window.location.href = 'register.html';
+            }
+        }
+
+        function updateGreeting(userData) {
+            const greeting = document.getElementById('userGreeting');
+            const time = new Date().getHours();
+            let timeGreeting = '';
+            
+            if (time < 12) timeGreeting = 'Good Morning';
+            else if (time < 17) timeGreeting = 'Good Afternoon';
+            else timeGreeting = 'Good Evening';
+            
+            greeting.textContent = `${timeGreeting}, ${userData.name}! Ready to continue your learning journey?`;
+        }
+
+        function loadDashboardData(userData) {
+            // Load stats based on user type
+            loadStats(userData);
+            
+            // Load activities based on user type
+            loadRecentActivities(userData);
+            
+            // Load courses based on user type
+            loadCurrentCourses(userData);
+            
+            // Load events
+            loadUpcomingEvents();
+            
+            // Load notifications
+            loadNotifications();
+            
+            // Update page title based on user type
+            updatePageTitle(userData);
+        }
+
+        function loadStats(userData) {
+            // Load stats based on user type
+            setTimeout(() => {
+                if (userData.type === 'student') {
+                    document.getElementById('coursesCount').textContent = '5';
+                    document.getElementById('notesCount').textContent = '12';
+                    document.getElementById('attendanceCount').textContent = '85%';
+                    document.getElementById('achievementsCount').textContent = '3';
+                } else {
+                    // Faculty stats
+                    document.getElementById('coursesCount').textContent = '4';
+                    document.getElementById('notesCount').textContent = '25';
+                    document.getElementById('attendanceCount').textContent = '92%';
+                    document.getElementById('achievementsCount').textContent = '7';
+                }
+            }, 500);
+        }
+
+        function loadRecentActivities(userData) {
+            let activities = [];
+            
+            if (userData.type === 'student') {
+                activities = [
+                    { action: 'Downloaded', item: 'Mathematics Notes', time: '2 hours ago', icon: 'fas fa-download' },
+                    { action: 'Completed', item: 'Physics Assignment', time: '1 day ago', icon: 'fas fa-check-circle' },
+                    { action: 'Attended', item: 'Chemistry Lab', time: '2 days ago', icon: 'fas fa-flask' },
+                    { action: 'Joined', item: 'Coding Club', time: '3 days ago', icon: 'fas fa-users' }
+                ];
+            } else {
+                // Faculty activities
+                activities = [
+                    { action: 'Uploaded', item: 'Mathematics Notes', time: '1 hour ago', icon: 'fas fa-upload' },
+                    { action: 'Graded', item: 'Physics Assignments', time: '3 hours ago', icon: 'fas fa-check-double' },
+                    { action: 'Conducted', item: 'Chemistry Lab Session', time: '1 day ago', icon: 'fas fa-flask' },
+                    { action: 'Attended', item: 'Faculty Meeting', time: '2 days ago', icon: 'fas fa-users' }
+                ];
+            }
+
+            const activityList = document.getElementById('activityList');
+            activityList.innerHTML = activities.map(activity => `
+                <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                    <div class="me-3">
+                        <i class="${activity.icon} text-primary" style="font-size: 1.2rem;"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <strong>${activity.action}</strong> ${activity.item}
+                        <br><small class="text-muted">${activity.time}</small>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadCurrentCourses(userData) {
+            let courses = [];
+            
+            if (userData.type === 'student') {
+                courses = [
+                    { name: 'Mathematics', code: 'MATH101', progress: 75, instructor: 'prof. padole mam' },
+                    { name: 'Physics', code: 'PHY101', progress: 60, instructor: 'Prof. juhi mam' },
+                    { name: 'Chemistry', code: 'CHEM101', progress: 80, instructor: 'Dr. nikhade sir' },
+                    { name: 'Computer Science', code: 'CS101', progress: 90, instructor: 'Prof. zanzad bhau' }
+                ];
+            } else {
+                // Faculty courses (teaching)
+                courses = [
+                    { name: 'Mathematics', code: 'MATH101', progress: 85, instructor: 'You' },
+                    { name: 'Physics', code: 'PHY101', progress: 70, instructor: 'You' },
+                    { name: 'Chemistry', code: 'CHEM101', progress: 90, instructor: 'You' },
+                    { name: 'Computer Science', code: 'CS101', progress: 95, instructor: 'You' }
+                ];
+            }
+
+            const coursesGrid = document.getElementById('coursesGrid');
+            coursesGrid.innerHTML = courses.map(course => `
+                <div class="col-lg-6 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="card-title">${course.name}</h6>
+                            <p class="card-text text-muted">${course.code} • ${course.instructor}</p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: ${course.progress}%" 
+                                     aria-valuenow="${course.progress}" aria-valuemin="0" aria-valuemax="100">
+                                    ${course.progress}%
+                                </div>
+                            </div>
+                            <small class="text-muted">${userData.type === 'student' ? 'Course Progress' : 'Teaching Progress'}</small>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadUpcomingEvents() {
+            const events = [
+                { name: 'Mid-Term Examinations', date: 'Dec 15, 2024', type: 'exam' },
+                { name: 'Technical Symposium', date: 'Dec 20, 2024', type: 'event' },
+                { name: 'Project Submission Deadline', date: 'Dec 25, 2024', type: 'deadline' }
+            ];
+
+            const eventList = document.getElementById('eventList');
+            eventList.innerHTML = events.map(event => `
+                <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                    <div class="me-3">
+                        <i class="fas fa-calendar text-${getEventColor(event.type)}" style="font-size: 1.2rem;"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <strong>${event.name}</strong>
+                        <br><small class="text-muted">${event.date}</small>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadNotifications() {
+            const notifications = [
+                { message: 'New notes available for Mathematics', time: '1 hour ago', type: 'info' },
+                { message: 'Assignment deadline extended for Physics', time: '3 hours ago', type: 'warning' },
+                { message: 'Lab schedule updated for Chemistry', time: '1 day ago', type: 'success' }
+            ];
+
+            const notificationList = document.getElementById('notificationList');
+            notificationList.innerHTML = notifications.map(notification => `
+                <div class="d-flex align-items-center mb-3 p-3 border rounded">
+                    <div class="me-3">
+                        <i class="fas fa-info-circle text-${notification.type}" style="font-size: 1.2rem;"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div>${notification.message}</div>
+                        <small class="text-muted">${notification.time}</small>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getEventColor(type) {
+            switch(type) {
+                case 'exam': return 'danger';
+                case 'event': return 'primary';
+                case 'deadline': return 'warning';
+                default: return 'info';
+            }
+        }
+
+        function updatePageTitle(userData) {
+            // Update page title based on user type
+            const pageTitle = document.querySelector('.page-title');
+            if (userData.type === 'student') {
+                pageTitle.textContent = 'Student Dashboard';
+            } else {
+                pageTitle.textContent = 'Faculty Dashboard';
+            }
+            
+            // Update document title
+            document.title = `${pageTitle.textContent} - Vivekananda Polytechnic`;
+        }
+
+        function setupDashboardEvents() {
+            // Schedule button
+            document.getElementById('scheduleBtn').addEventListener('click', function() {
+                showNotification('Schedule feature coming soon!', 'info');
+            });
+
+            // Assignments button
+            document.getElementById('assignmentsBtn').addEventListener('click', function() {
+                showNotification('Assignments feature coming soon!', 'info');
+            });
+
+            // Profile link
+            document.getElementById('profileLink').addEventListener('click', function() {
+                showNotification('Profile feature coming soon!', 'info');
+            });
+
+            // Settings link
+            document.getElementById('settingsLink').addEventListener('click', function() {
+                showNotification('Settings feature coming soon!', 'info');
+            });
+
+            // Logout link
+            document.getElementById('logoutLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Are you sure you want to logout?')) {
+                    // Clear session data
+                    sessionStorage.removeItem('userType');
+                    sessionStorage.removeItem('userName');
+                    // Redirect to home page
+                    window.location.href = 'index.html';
+                }
+            });
+        }
+
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+
+            // Add to page
+            document.body.appendChild(notification);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
+
+

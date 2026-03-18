@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - Vivekananda Polytechnic Sitasaongi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-container">
+                    <i class="fas fa-graduation-cap logo-icon"></i>
+                    <span class="logo-text">VPS</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faculty.html">Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notes.html">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatbot.html">AI Chatbot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2" href="profile.html" title="Profile">
+                            <i class="fas fa-user-circle fa-lg text-white"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Our Faculty</h1>
+                    <p class="page-subtitle">Meet our dedicated team of experienced educators and professionals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Filter -->
+    <section class="filter-section py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="filter-buttons">
+                        <button class="btn btn-filter active" data-filter="all">All Departments</button>
+                        <button class="btn btn-filter" data-filter="computer">Information Technology</button>
+                        <button class="btn btn-filter" data-filter="mechanical">Mechanical Engineering</button>
+                        <button class="btn btn-filter" data-filter="electrical">Electrical Engineering</button>
+                        <button class="btn btn-filter" data-filter="civil">Civil Engineering</button>
+                         <button class="btn btn-filter" data-filter="civil">Mininng Engineering</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Members -->
+    <section class="faculty-section py-5">
+        <div class="container">
+            <div class="row" id="faculty-container">
+                <!-- Computer Engineering -->
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="computer">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Computer</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>prof. zanzad sir</h3>
+                            <p class="designation">Head of Department</p>
+                            <p class="qualification">B Tech.M Tech. in Information Technology
+                            </p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> rzanzad@gmail.com</p>
+                                <p><i class="fas fa-phone"></i> +91 96043 45652</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="computer">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Computer</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Priya Meshram</h3>
+                            <p class="designation">Assistant Professor</p>
+                            <p class="qualification">B.Tech in Information Technology</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> priya.meshram@gmail.com</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43211</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mechanical Engineering -->
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="Computer">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Computer</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof.V .M. Bondre</h3>
+                            <p class="designation">Professor</p>
+                            <p class="qualification">M.Tech in computer Engineering</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> v.m.bondre@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 8275397225</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="mechanical">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Mechanical</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Sunita Verma</h3>
+                            <p class="designation">Assistant Professor</p>
+                            <p class="qualification">M.Tech in Manufacturing</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> sunita.verma@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43213</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="mechanical">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Mechanical</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Sunita Verma</h3>
+                            <p class="designation">Assistant Professor</p>
+                            <p class="qualification">M.Tech in Manufacturing</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> sunita.verma@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43213</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrical Engineering -->
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="electrical">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Electrical</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Deepak Singh</h3>
+                            <p class="designation">Head of Department</p>
+                            <p class="qualification">M.Tech in Electrical Engineering</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> deepak.singh@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43214</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="electrical">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Electrical</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Meera Gupta</h3>
+                            <p class="designation">Assistant Professor</p>
+                            <p class="qualification">M.Tech in Power Systems</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> meera.gupta@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43215</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Civil Engineering -->
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="civil">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Civil</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Ramesh Kumar</h3>
+                            <p class="designation">Head of Department</p>
+                            <p class="qualification">M.Tech in Civil Engineering</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> ramesh.kumar@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43216</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 faculty-item" data-department="civil">
+                    <div class="faculty-card">
+                        <div class="faculty-photo">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="department-badge">Civil</div>
+                        </div>
+                        <div class="faculty-info">
+                            <h3>Prof. Anjali Desai</h3>
+                            <p class="designation">Assistant Professor</p>
+                            <p class="qualification">M.Tech in Structural Engineering</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> anjali.desai@vps.edu.in</p>
+                                <p><i class="fas fa-phone"></i> +91 98765 43217</p>
+                            </div>
+                            <div class="faculty-actions">
+                                <button class="btn btn-sm btn-primary">View Profile</button>
+                                <button class="btn btn-sm btn-outline-primary">Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Vivekananda Polytechnic</h5>
+                    <p>Empowering students with quality technical education and fostering innovation for a brighter future.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Vivekananda Polytechnic Sitasaongi. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

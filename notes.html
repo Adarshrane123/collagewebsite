@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes - Vivekananda Polytechnic Sitasaongi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-container">
+                    <i class="fas fa-graduation-cap logo-icon"></i>
+                    <span class="logo-text">VPS</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty.html">Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="notes.html">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chatbot.html">AI Chatbot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ms-2" href="profile.html" title="Profile">
+                            <i class="fas fa-user-circle fa-lg text-white"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Study Notes</h1>
+                    <p class="page-subtitle">Access comprehensive study materials for all subjects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="search-box">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search for subjects, topics, or faculty...">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-10">
+                    <div class="filter-tabs">
+                        <button class="btn btn-filter active" data-filter="all">All Subjects</button>
+                        <button class="btn btn-filter" data-filter="computer">Information Technology</button>
+                        <button class="btn btn-filter" data-filter="mechanical">Mechanical Engineering</button>
+                        <button class="btn btn-filter" data-filter="electrical">Electrical Engineering</button>
+                        <button class="btn btn-filter" data-filter="civil">Civil Engineering</button>
+                     <button class="btn btn-filter" data-filter="civil">Mining Engineering</button>
+
+                    </div>
+                    <!-- Year filter (shown when a specific branch is selected) -->
+                    <div id="yearFilter" class="mt-3" style="display:none;">
+                        <div class="btn-group" role="group" aria-label="Year Filter">
+                            <button class="btn btn-outline-secondary year-btn" data-year="all">All Years</button>
+                            <button class="btn btn-outline-secondary year-btn" data-year="1">1st Year</button>
+                            <button class="btn btn-outline-secondary year-btn" data-year="2">2nd Year</button>
+                            <button class="btn btn-outline-secondary year-btn" data-year="3">3rd Year</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Table Section -->
+    <section class="notes-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover notes-table">
+                            <thead class="table-dark">
+                                <tr>
+                                        <th>Subject</th>
+                                        <th>Faculty</th>
+                                        <th>Department</th>
+                                        <th>File Size</th>
+                                        <th>Upload Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                            </thead>
+                            <tbody id="notesTableBody">
+                                <!-- Computer Engineering Notes -->
+                                <tr class="notes-row" data-department="computer">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-laptop-code subject-icon"></i>
+                                            <span>Object oriented programming c++</span>
+                                        </div>
+                                    </td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.5 MB</td>
+                                    <td>15 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="https://www.cet.edu.in/noticefiles/285_OOPS%20lecture%20notes%20Complete.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Additional IT (Information Technology) - First Year Subjects -->
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-calculator subject-icon"></i>
+                                            <span>Basic Mathematics</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. S. N. Mathur</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.2 MB</td>
+                                    <td>01 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/basic_mathematics.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-comments subject-icon"></i>
+                                            <span>Communication Skill English</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Neha Rao</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>900 KB</td>
+                                    <td>02 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/communication_skill_english.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-desktop subject-icon"></i>
+                                            <span>Fundamentals of ICT</span>
+                                        </div>
+                                    </td>
+                                    <td>Dr. A. Verma</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.4 MB</td>
+                                    <td>03 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/fundamentals_of_ict.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-ruler-combined subject-icon"></i>
+                                            <span>Engineering Graphics</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. R. K. Singh</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.6 MB</td>
+                                    <td>04 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/engineering_graphics.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- More IT 1st Year Subjects -->
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-square-root-alt subject-icon"></i>
+                                            <span>Applied Mathematics</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. A. K. Sharma</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.1 MB</td>
+                                    <td>05 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/applied_mathematics.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-code subject-icon"></i>
+                                            <span>Programming in C</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Dinesh Kumar</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.3 MB</td>
+                                    <td>06 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/programming_in_c.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-terminal subject-icon"></i>
+                                            <span>Linux Basics</span>
+                                        </div>
+                                    </td>
+                                    <td>Mr. S. Lal</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>800 KB</td>
+                                    <td>07 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/linux_basics.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-globe subject-icon"></i>
+                                            <span>Web Page Designing</span>
+                                        </div>
+                                    </td>
+                                    <td>Ms. P. Gupta</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.0 MB</td>
+                                    <td>08 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/web_page_designing.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="1">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-bolt subject-icon"></i>
+                                            <span>Basic Electronics & Electrical Engineering</span>
+                                        </div>
+                                    </td>
+                                    <td>Dr. N. Bose</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.5 MB</td>
+                                    <td>09 Aug 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/basic_electronics_electrical.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- IT 2nd Year Subjects -->
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-database subject-icon"></i>
+                                            <span>Data Structures using C</span>
+                                        </div>
+                                    </td>
+                                    <td>Pro.Naveen sir</t>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.8 MB</td>
+                                    <td>10 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/data_structures_using_c.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-database subject-icon"></i>
+                                            <span>Database Management System</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Priya meshram</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.0 MB</td>
+                                    <td>12 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/database_management_system.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-book subject-icon"></i>
+                                            <span>Object Oriented Programming using C++</span>
+                                        </div>
+                                    </td>
+                                    <td>Dr. Ravishankar zanzad</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.2 MB</td>
+                                    <td>14 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/oop_using_cpp.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-microchip subject-icon"></i>
+                                            <span>Digital Techniques and Microprocessors</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Vijay bondre</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.4 MB</td>
+                                    <td>16 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/digital_tech_microprocessors.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-leaf subject-icon"></i>
+                                            <span>Environmental Education and Sustainability</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Priya meshram</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.0 MB</td>
+                                    <td>18 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/environmental_education_sustainability.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-coffee subject-icon"></i>
+                                            <span>Java Programming</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Ravishankar zanzad</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.1 MB</td>
+                                    <td>20 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/java_programming.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-network-wired subject-icon"></i>
+                                            <span>Data Communication and Computer Network</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Vijay Bondre</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.3 MB</td>
+                                    <td>22 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/data_communication_networks.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-shield-alt subject-icon"></i>
+                                            <span>Information Security</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Naveen sir</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.9 MB</td>
+                                    <td>24 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/information_security.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="2">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-python subject-icon"></i>
+                                            <span>Python Programming</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Ravishnkar zanzad</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.0 MB</td>
+                                    <td>26 Jan 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/python_programming.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- IT 3rd Year Subjects -->
+                                <tr class="notes-row" data-department="computer" data-year="3">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-cogs subject-icon"></i>
+                                            <span>Operating System</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Vijay bondre</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.6 MB</td>
+                                    <td>10 Jun 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/operating_systems.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="3">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-network-wired subject-icon"></i>
+                                            <span>Advanced Computer Network</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Priya Meshram</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.8 MB</td>
+                                    <td>12 Jun 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/advanced_computer_network.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer" data-year="3">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-mobile-alt subject-icon"></i>
+                                            <span>Mobile Application Development</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Priya meshram</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>2.4 MB</td>
+                                    <td>14 Jun 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pdfs/mobile_app_development.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-database subject-icon"></i>
+                                            <span>Database Management</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Priya Sharma</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>1.8 MB</td>
+                                    <td>12 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="sql_fundamentals.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="computer">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-network-wired subject-icon"></i>
+                                            <span>Computer Networks</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof.Vijay bondre</td>
+                                    <td><span class="badge bg-primary">IT</span></td>
+                                    <td>3.2 MB</td>
+                                    <td>10 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="osi_tcpip_networks.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Mechanical Engineering Notes -->
+                                <tr class="notes-row" data-department="mechanical">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-cogs subject-icon"></i>
+                                            <span>Machine Design</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Amit Patel</td>
+                                    <td><span class="badge bg-warning">Mechanical</span></td>
+                                    <td>4.1 MB</td>
+                                    <td>14 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="machine_design_elements.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="mechanical">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-industry subject-icon"></i>
+                                            <span>Manufacturing Processes</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Sunita Verma</td>
+                                    <td><span class="badge bg-warning">Mechanical</span></td>
+                                    <td>2.9 MB</td>
+                                    <td>11 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="metal_cutting_forming.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Electrical Engineering Notes -->
+                                <tr class="notes-row" data-department="electrical">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-bolt subject-icon"></i>
+                                            <span>Power Systems</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Meera Gupta</td>
+                                    <td><span class="badge bg-info">Electrical</span></td>
+                                    <td>3.7 MB</td>
+                                    <td>13 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="power_transmission.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="electrical">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-microchip subject-icon"></i>
+                                            <span>Control Systems</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Deepak Singh</td>
+                                    <td><span class="badge bg-info">Electrical</span></td>
+                                    <td>2.3 MB</td>
+                                    <td>9 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="pid_controllers.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Civil Engineering Notes -->
+                                <tr class="notes-row" data-department="civil">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-building subject-icon"></i>
+                                            <span>Structural Analysis</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Ramesh Kumar</td>
+                                    <td><span class="badge bg-secondary">Civil</span></td>
+                                    <td>3.5 MB</td>
+                                    <td>8 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="beam_analysis.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr class="notes-row" data-department="civil">
+                                    <td>
+                                        <div class="subject-info">
+                                            <i class="fas fa-road subject-icon"></i>
+                                            <span>Transportation Engineering</span>
+                                        </div>
+                                    </td>
+                                    <td>Prof. Anjali Desai</td>
+                                    <td><span class="badge bg-secondary">Civil</span></td>
+                                    <td>2.8 MB</td>
+                                    <td>7 Dec 2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-success download-btn" data-file="highway_design.pdf">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Statistics -->
+    <section class="stats-section py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>150+</h3>
+                        <p>Study Materials</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>2,500+</h3>
+                        <p>Downloads</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>500+</h3>
+                        <p>Active Students</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>25+</h3>
+                        <p>Subjects Covered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Vivekananda Polytechnic</h5>
+                    <p>Empowering students with quality technical education and fostering innovation for a brighter future.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Vivekananda Polytechnic Sitasaongi. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
